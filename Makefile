@@ -73,7 +73,7 @@ clean: | obj
 ifeq ($(TARGET),windows)
   XFILES += obj/rc.o
 obj/rc.o: flips.rc flips.h | obj
-	windres flips.rc obj/rc.o
+	${_CMAKE_TOOLCHAIN_PREFIX}windres flips.rc obj/rc.o
 endif
 
 MOREFLAGS := $(CFLAGS_$(TARGET))
